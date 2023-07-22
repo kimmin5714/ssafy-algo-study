@@ -34,3 +34,4 @@ ex) 1주차면 1week 폴더 생성 후 내부에 백준 3333 콜라 먹기처럼
     git add 파일명 : 해당 파일명만 스테이지에 올림
     git commit -m "~~" : 스테이지에 있는 파일을 로컬 레포지토리에 올림
     git push origin 본인 브랜치명 / main에 바로 push 금지
+    git pull origin 브랜치명 : 현재 내 브랜치를 해당 브랜치로 최신화
