@@ -18,9 +18,13 @@
 ## **Git 명령어**
 
     git clone github주소 : 만들어져있는 repository 가져옴
+    
     git branch : 현재 생성된 내 branch 리스트
+    
     git branch 브랜치명 : 브랜치 생성
+    
     git branch -M 브랜치명 : 현재 브랜치명 변경
+
     git checkout 브랜치명 : 해당 브랜치로 이동
 
 ----
@@ -31,7 +35,11 @@
 ex) 1주차면 1week 폴더 생성 후 내부에 백준 3333 콜라 먹기처럼 파일 업로드
 
     git add . : 워크 트리에 있는 모든 파일을 스테이지에 올림
+    
     git add 파일명 : 해당 파일명만 스테이지에 올림
+    
     git commit -m "~~" : 스테이지에 있는 파일을 로컬 레포지토리에 올림
+    
     git push origin 본인 브랜치명 / main에 바로 push 금지
+    
     git pull origin 브랜치명 : 현재 내 브랜치를 해당 브랜치로 최신화
