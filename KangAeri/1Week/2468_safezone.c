@@ -16,66 +16,43 @@ int findnum(int n, int h){
 		for(m=0;m<n;m++){
 			if(region[k][m]<=h) { //flood
 				arr[k][m]=-1;
-			} else{ //not flood
-				
-				if(k>0 && (arr[k-1][m]>-1)){
-					x = arr[k-1][m];
-					while(arr[k-1][m]!=x){
-						x = arr[x/n][x%n]; //get parent idx
-					}	
-				}else{
-					x=-1;
-				}
-				if(m>0 && (arr[k][m-1]>-1)){
-					y = arr[k][m-1];
-					while(arr[k][m-1]!=y){
-						y = arr[y/n][y%n]; //get parent idx
-					}	
-				} else{
-					y=-1;
-				}
-				
-				if(x>-1 && y> -1){
-					if(x<y){
-						arr[k][m] = x;
-						arr[y/n][y%n] = x;			
-					} else{
-						arr[k][m] = y;
-						arr[x/n][x%n] = y;	
-					}
-				} else if(x>-1){
+				continue;
+			}
+			//not flood//
+			if(k>0 && (arr[k-1][m]>-1)){
+				x = arr[k-1][m];
+				while(arr[x/n][x%n]!=x){
+					x = arr[x/n][x%n]; //get parent idx
+				}	
+			} else{
+				x=-1;
+			}
+			
+			if(m>0 && (arr[k][m-1]>-1)){
+				y = arr[k][m-1];
+				while(arr[y/n][y%n]!=y){
+					y = arr[y/n][y%n]; //get parent idx
+				}	
+			} else{
+				y=-1;
+			}
+			
+			if(x>-1 && y> -1){
+				if(x<y){
 					arr[k][m] = x;
-				}else if(y>-1){
+					arr[y/n][y%n] = x;			
+				} else{
 					arr[k][m] = y;
-				} else{
-					arr[k][m]=k*n+m;
+					arr[x/n][x%n] = y;	
 				}
-				/*
-				
-	
-				if(k>0 && (arr[k-1][m]>-1) && m>0 && (arr[k][m-1]>-1)){
-					
-					while(arr[k-1][m]!=x){
-						x=g[x];
-					}
-					if(arr[k-1][m]>arr[k][m-1]){
-						arr[k][m] = arr[k][m-1];
-						tmp = arr[k-1][m];
-						arr[tmp/n][tmp%n] = arr[k][m-1];		
-					} else{
-						arr[k][m] = arr[k-1][m];
-						tmp = arr[k][m-1];
-						arr[tmp/n][tmp%n] = arr[k-1][m];	
-					}
-				} else if(k>0 && (arr[k-1][m]>-1) ){
-					arr[k][m] = arr[k-1][m];			
-				} else if(m>0 && (arr[k][m-1]>-1)){
-					arr[k][m] = arr[k][m-1];
-				} else{
-					arr[k][m]=k*n+m;
-				}
-				*/
-			}//end else
+			} else if(x>-1){
+				arr[k][m] = x;
+			}else if(y>-1){
+				arr[k][m] = y;
+			} else{
+				arr[k][m]=k*n+m;
+			}	
+			
 		}//end for:m
 	}//end for:k
 	
