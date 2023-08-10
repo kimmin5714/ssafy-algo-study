@@ -1,10 +1,8 @@
-package ssafy.study.week3;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_1080_행렬 {
+public class Main {
 
 	private static int N, M;
 	private static int[][] A;
@@ -37,11 +35,6 @@ public class Main_1080_행렬 {
 
 		count = 0;
 
-		if (N < 3 || M < 3) {
-			System.out.println(-1);
-			return;
-		}
-
 		for (int i = 0; i < N - 2; i++) {
 			for (int j = 0; j < M - 2; j++) {
 				if (A[i][j] != B[i][j]) {
@@ -51,6 +44,15 @@ public class Main_1080_행렬 {
 						}
 					}
 					count++;
+				}
+			}
+		}
+
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				if (A[i][j] != B[i][j]) {
+					System.out.println(-1);
+					return;
 				}
 			}
 		}
